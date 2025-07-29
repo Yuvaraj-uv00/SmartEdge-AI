@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartEdge AI - Guide to AI in Embedded & IoT Systems</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      color: #333;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1581091870627-3c4a63a99661?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+      box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    section {
+      padding: 2rem;
+    }
+    .card {
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+    }
+    pre {
+      background-color: #eee;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    .bg-alt {
+      background-color: #f0f4f8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚀 SmartEdge AI</h1>
+    <p>Your Complete Student Guide to Implementing AI in Embedded & IoT Devices</p>
+  </header>
+
+  <section class="bg-alt">
+    <h2>📘 What Are Embedded Systems and IoT?</h2>
+    <p><strong>Embedded Systems</strong> are specialized computing systems designed to perform dedicated functions within larger systems. They include microcontrollers like Arduino, ESP32, STM32, and are used in appliances, cars, and industrial devices.</p>
+    <p><strong>IoT (Internet of Things)</strong> refers to a network of physical devices embedded with sensors, software, and connectivity to exchange data. Examples include smart thermostats, wearable health monitors, and smart agriculture systems.</p>
+    <p>Combining AI with Embedded + IoT enables local decision-making, real-time control, and minimal internet dependence — called <strong>Edge AI</strong>.</p>
+  </section>
+
+  <section>
+    <h2>⚙️ How AI Works in Embedded Systems</h2>
+    <p>Implementing AI in embedded systems involves training a machine learning model on a powerful system, optimizing it, and deploying it on a small device for inference:</p>
+    <ol>
+      <li><strong>Data Collection</strong>: Use sensors to gather real-world data (motion, sound, temperature)</li>
+      <li><strong>Model Training</strong>: Train using Python (TensorFlow, Keras, Edge Impulse)</li>
+      <li><strong>Model Optimization</strong>: Quantize/prune the model to fit in limited RAM/Flash</li>
+      <li><strong>Deployment</strong>: Flash the optimized model onto microcontroller</li>
+    </ol>
+    <p>Common platforms include <strong>TensorFlow Lite for Microcontrollers</strong>, <strong>Edge Impulse</strong>, and <strong>Arduino MLKit</strong>.</p>
+  </section>
+
+  <section class="bg-alt">
+    <h2>💡 Student Project Ideas</h2>
+    <div class="row">
+      <!-- Previous 3 cards -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Smart Garbage Monitor</h5>
+            <p class="card-text">Detect fill levels in a bin using ultrasonic sensor and AI for waste scheduling.</p>
+            <ul>
+              <li>Hardware: ESP32 + Ultrasonic</li>
+              <li>AI: Level detection</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">AI Door Lock System</h5>
+            <p class="card-text">Use face detection to authorize door access.</p>
+            <ul>
+              <li>Hardware: Raspberry Pi + Camera</li>
+              <li>AI: Face recognition (OpenCV)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Health Monitoring Band</h5>
+            <p class="card-text">Detect heart rate, temperature, and anomalies using ML model on edge.</p>
+            <ul>
+              <li>Hardware: ESP32 + MAX30100</li>
+              <li>AI: Anomaly detection</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>📦 Demo Code: Keyword Detection (TinyML)</h2>
+    <p>This demo uses a pre-trained model to recognize the word "yes" or "no" to toggle an LED on an Arduino.</p>
+    <pre><code>#include "micro_model.h"
+#include "Arduino.h"
+
+#define LED_PIN 13
+
+void setup() {
+  pinMode(LED_PIN, OUTPUT);
+  Serial.begin(9600);
+  setupAI();
+}
+
+void loop() {
+  String command = listenToCommand();
+  if (command == "yes") {
+    digitalWrite(LED_PIN, HIGH);
+  } else if (command == "no") {
+    digitalWrite(LED_PIN, LOW);
+  }
+  delay(100);
+}</code></pre>
+    <p><a href="#">📥 Download Arduino Code</a> | <a href="#">📥 Download Trained Model</a></p>
+  </section>
+
+  <section class="bg-alt">
+    <h2>🛠 Tools & Frameworks</h2>
+    <ul>
+      <li><strong>TensorFlow Lite</strong> – Model optimization and edge deployment</li>
+      <li><strong>Edge Impulse</strong> – GUI-based model training for microcontrollers</li>
+      <li><strong>Arduino IDE</strong> – Code editor and uploader for boards</li>
+      <li><strong>Fritzing</strong> – Circuit diagram design</li>
+      <li><strong>OpenCV</strong> – Computer vision on Raspberry Pi</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📘 FAQ & Resources</h2>
+    <ul>
+      <li>📎 <a href="https://www.tinyml.org/" target="_blank">TinyML Foundation</a></li>
+      <li>📎 <a href="https://www.edgeimpulse.com/" target="_blank">Edge Impulse Official</a></li>
+      <li>📎 <a href="https://www.arduino.cc/" target="_blank">Arduino AI Projects</a></li>
+      <li>📎 <a href="https://tensorflow.org/lite/microcontrollers" target="_blank">TensorFlow Lite Micro</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 SmartEdge AI | Designed with ❤️ by Yuvaraj | Explore, Learn, Build</p>
+  </footer>
+</body>
+</html>
